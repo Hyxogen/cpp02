@@ -22,7 +22,7 @@ Fixed &Fixed::operator=(const Fixed &other) {
         return *this;
     }
     _data = other._data;
-	return *this;
+    return *this;
 }
 
 int Fixed::getRawBits() const {
