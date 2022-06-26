@@ -3,8 +3,8 @@
 #include "Fixed.hpp"
 
 int main() {
-    Fixed a;
-    Fixed b(a);
+    const Fixed a;
+    const Fixed b(a);
     Fixed c;
 
     c = b;
