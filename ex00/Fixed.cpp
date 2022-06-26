@@ -21,7 +21,7 @@ Fixed &Fixed::operator=(const Fixed &other) {
     if (this == &other) {
         return *this;
     }
-    _data = other;
+    _data = other._data;
 }
 
 int Fixed::getRawBits() const {
