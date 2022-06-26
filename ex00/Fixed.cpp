@@ -30,7 +30,7 @@ int Fixed::getRawBits() const {
     return _data;
 }
 
-int Fixed::setRawBits(const int raw) {
+void Fixed::setRawBits(const int raw) {
     std::cout << "setRawBits called" << std::endl;
     _data = raw;
 }
