@@ -22,6 +22,6 @@ public:
     int   toInt() const;
     float toFloat() const;
 };
-std::ostream &operator<<(std::ostream &stream, const Fixed &other);
+std::ostream &operator<<(std::ostream &stream, const Fixed &fixed);
 
 #endif
