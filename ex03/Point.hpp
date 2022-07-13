@@ -13,10 +13,8 @@ public:
 
 	~Point();
 
-	Point	operator+(const Fixed &other) const;
-	Point	operator-(const Fixed &other) const;
-
-	static Fixed dot(const Fixed &a, const Fixed &b);
+	Point	operator+(const Point &other) const;
+	Point	operator-(const Point &other) const;
 private:
 	Point &operator=(const Point &other); /* deleted */
 };

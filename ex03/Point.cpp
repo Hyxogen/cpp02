@@ -14,20 +14,17 @@ Point::Point(const Point &other) : x(other.x), y(other.y) {
 
 Point::~Point() { }
 
-Point Point::operator+(const Fixed &other) const {
+Point Point::operator+(const Point &other) const {
 	Point result(x + other.x, y + other.y);
 	return result;
 }
 
-Point Point::operator-(const Fixed &other) const {
+Point Point::operator-(const Point &other) const {
 	Point result(x - other.x, y - other.y);
 	return result;
 }
 
 Point &Point::operator=(const Point &other) {
+	(void) other;
 	return *this;
-}
-
-Fixed Point::dot(const Fixed &a, const Fixed &b) {
-
 }

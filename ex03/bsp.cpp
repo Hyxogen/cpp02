@@ -1,18 +1,13 @@
 #include "Point.hpp"
 
-bool bsp(const Point &a, const Point &b, const Point &c, const Point &point) {
+bool bsp(const Point &a, const Point &b, const Point &c, const Point &p) {
 	const Point v0(b - a);
 	const Point v1(c - a);
-	const Point v2(point - a);
+	const Point v2(p - a);
 
-	const Fixed d00 = Point::dot(v0, v0);
-	const Fixed d01 = Point::dot(v0, v1);
-	const Fixed d11 = Point::dot(v1, v1);
-	const Fixed d20 = Point::dot(v2, v0);
-	const Fixed d21 = Point::dot(v2, v1);
-
-	const Fixed denom = ((d00 * d11) - (d01 * d01));
-	const Fixed v = ((d11 *d20) - (d01 * d21)) / denom;
-	const Fixed w = ((d00 * d21) - (d01 d20)) / denom;
-	return (v >= 0 && w >= 0 && v + w <= 1);
+	const float  denom = ((b.x * c.y) - (c.x * b.y)).toFloat();
+	const float wa = ((p.x * (b.y - c.y)) + (p.y * (c.x - b.x)) + ((b.x * c.y) - (c.x * b.y))).toFloat() / denom;
+	const float wb = ((p.x * c.y) - (p.y * c.x)).toFloat() / denom;
+	const float wc = ((p.y * b.x) - (p.x * b.y)).toFloat() / denom;
+	return (wa >= 0 && wb >= 0 && wc >= 0 && wa + wb + wc <= 1);
 }

@@ -5,7 +5,7 @@ HEADERS		:= Fixed.hpp
 OBJECTS		:= $(addsuffix .o, $(SOURCES))
 
 CXX			:= clang++
-CXX_FLAGS	:= -std=c++98 -Wall -Wextra -Werror -pedantic -O3 -g0
+CXX_FLAGS	:= -std=c++98 -Wall -Wextra -Werror -pedantic -O0 -g3
 
 SILENT		:= @
 ifndef verbose
